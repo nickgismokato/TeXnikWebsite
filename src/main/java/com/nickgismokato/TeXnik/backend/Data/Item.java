@@ -9,7 +9,13 @@ public class Item{
 	public int amount;
 	public CategoryEnum status;
 
-	public Item(int sID, int cID, int ean, String nam, int total){
-
+	public Item(int iID, int sID, int cID, int ean, String nam, int total){
+		internalID = iID;
+		satyrID = sID;
+		catID = cID;
+		EAN = ean;
+		name = nam;
+		amount = total;
+		status = CategoryEnum.fromInteger(cID);
 	}
 }
