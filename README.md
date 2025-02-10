@@ -1,11 +1,12 @@
 # $\TeX \texttt{nik}$ Website
 This is the open source repository for the $\TeX \texttt{nik}$ Website for their inventory system togheter with general storage of their internal software and their documentation.
+
 ![Java](https://img.shields.io/badge/17-grey.svg?style=for-the-badge&logo=openjdk&logoColor=whitex&label=Java&labelColor=%23ED8B00)
 ![Apache Maven](https://img.shields.io/badge/3.8.3-grey?style=for-the-badge&logo=Apache%20Maven&logoColor=white&label=APache%20Maven&labelColor=C71A36)
-![Vaadin](https://img.shields.io/static/v1?style=for-the-badge&message=24.3.19&color=grey&logo=Vaadin&logoColor=00B4F0&label=Vaadin&labelColor=222222)
-![Spring Boot](https://img.shields.io/static/v1?style=for-the-badge&message=3.3.6&color=grey&logo=Spring+Boot&logoColor=FFFFFF&label=Spring%20Boot&labelColor=6DB33F)
-![Spring](https://img.shields.io/static/v1?style=for-the-badge&message=6.1.15&color=grey&logo=Spring&logoColor=FFFFFF&label=Spring&labelColor=6DB33F)
-![Spring Security](https://img.shields.io/static/v1?style=for-the-badge&message=6.1.15&color=grey&logo=Spring+Security&logoColor=FFFFFF&label=Spring%20Security&labelColor=6DB33F)
+![Vaadin](https://img.shields.io/static/v1?style=for-the-badge&message=24.6.4&color=grey&logo=Vaadin&logoColor=00B4F0&label=Vaadin&labelColor=222222)
+![Spring Boot](https://img.shields.io/static/v1?style=for-the-badge&message=3.4.2&color=grey&logo=Spring+Boot&logoColor=FFFFFF&label=Spring%20Boot&labelColor=6DB33F)
+<!--![Spring](https://img.shields.io/static/v1?style=for-the-badge&message=6.1.15&color=grey&logo=Spring&logoColor=FFFFFF&label=Spring&labelColor=6DB33F)
+![Spring Security](https://img.shields.io/static/v1?style=for-the-badge&message=6.1.15&color=grey&logo=Spring+Security&logoColor=FFFFFF&label=Spring%20Security&labelColor=6DB33F)-->
 <!--![JUnit5](https://img.shields.io/static/v1?style=for-the-badge&message=5.10.2&color=grey&logo=JUnit5&logoColor=FFFFFF&label=JUnit5&labelCOlor=25A162)
 ![NodeJS](https://img.shields.io/badge/v20.18.1-grey?style=for-the-badge&logo=node.js&logoColor=white&label=node.js&labelColor=6DA55F)
 ![NPM](https://img.shields.io/badge/8.19.4-grey.svg?style=for-the-badge&logo=npm&logoColor=white&label=NPM&labelColor=%23CB3837)
@@ -15,7 +16,7 @@ This website is made to run on a Linux environment. For Windows or mac users who
 |Dependency|Version|Optional|
 |:---|:---:|---:|
 |`Java`|17||
-|`Maven`|3.8.3||
+|`Maven`|3.8.3+||
 ## Functionality of the website
 The following list both works as an information of what functionality we want to implement and what we have implementet togheter with optional functionality we wish to implement later.
 ### Main functionality of the website
