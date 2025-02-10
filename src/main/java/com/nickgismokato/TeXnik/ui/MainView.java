@@ -7,6 +7,7 @@ import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.confirmdialog.ConfirmDialog;
 
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.*;
 
 import com.vaadin.flow.component.button.Button;
@@ -48,15 +49,12 @@ import java.util.Optional;
  * The main view contains a text field for getting th2e user name and a button
  * that shows a greeting message in a notification.
  */
-@Route("")
-public class MainView extends AppLayout {
+@Route("/main")
+@CssImport(value = "./styles/navbarStyles.css", themeFor = "vaadin-app-layout")
+public class MainView extends AppLayout{
+
 
     public MainView(GreetService service) {
-		H1 title = new H1("TeXnik Website");
-
-		title.getStyle().set("font-size", "var(--lumo-font-size-l)")
-				.set("margin", "0");
-
 		DrawerToggle toggle = new DrawerToggle();
 		SideNavMenu sideMenu = new SideNavMenu();
 		Scroller scroller = new Scroller(sideMenu);
@@ -66,28 +64,29 @@ public class MainView extends AppLayout {
 
 		HorizontalLayout navigation = getNavigation();
 		navigation.getElement();
+		addToNavbar(toggle, navigation);
 
-		addToNavbar(toggle, title, navigation);
+		setPrimarySection(Section.DRAWER);
+
+		//addAttachListener(e -> getUI().ifPresent(ui -> ui.navigate(DashboardView.class)));
     }
 
 	private HorizontalLayout getNavigation(){
 		HorizontalLayout navigation = new HorizontalLayout();
+		Image satyrLogo = new Image("images/satyr.png", "Satyr logo");
+
+		H1 title = new H1("TeXnik Website");
+		title.getStyle().set("font-size", "var(--lumo-font-size-xl)")
+				.set("margin", "0");
+		satyrLogo.setWidth(80, Unit.PIXELS);
+		satyrLogo.setHeight(47, Unit.PIXELS);
 		navigation.addClassNames(LumoUtility.JustifyContent.CENTER,
 				LumoUtility.Gap.SMALL, LumoUtility.Height.MEDIUM,
 				LumoUtility.Width.FULL);
-		navigation.add(createLink("HelloWorld"));
+		navigation.add(title);
+		navigation.add (satyrLogo);
+		satyrLogo.getStyle().set("margin-left", "auto");
 		return navigation;
 	}
 
-	private RouterLink createLink(String viewName){
-		RouterLink link = new RouterLink();
-		link.add(viewName);
-		link.addClassNames(LumoUtility.Display.FLEX,
-			LumoUtility.AlignItems.CENTER,
-				LumoUtility.Padding.Horizontal.MEDIUM,
-				LumoUtility.TextColor.SECONDARY, LumoUtility.FontWeight.MEDIUM);
-		link.getStyle().set("text-decoration", "none");
-
-		return link;
-	}
 }
