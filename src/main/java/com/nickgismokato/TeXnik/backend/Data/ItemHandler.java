@@ -18,4 +18,8 @@ public final class ItemHandler{
 	public static void RemoveFromList(Item item){
 		items.remove(item);
 	}
+
+	public static List<Item> ReturnItemList(){
+		return items;
+	}
 }

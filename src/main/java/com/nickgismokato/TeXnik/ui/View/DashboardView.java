@@ -8,6 +8,8 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 
+import com.nickgismokato.TeXnik.backend.Data.ItemHandler;
+
 @Route(value="Dashboard", layout = MainView.class)
 @PageTitle("Dashboard View")
 @RouteAlias(value = "", layout = MainView.class)
