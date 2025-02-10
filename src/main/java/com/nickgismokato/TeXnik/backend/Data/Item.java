@@ -1,5 +1,7 @@
 package com.nickgismokato.TeXnik.backend.Data;
 
+import com.nickgismokato.TeXnik.backend.Data.Enum.CategoryEnum;
+
 public class Item{
 	public int internalID;
 	public int satyrID;

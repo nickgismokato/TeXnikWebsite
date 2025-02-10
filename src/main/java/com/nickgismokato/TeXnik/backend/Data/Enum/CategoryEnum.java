@@ -1,4 +1,4 @@
-package com.nickgismokato.TeXnik.backend.Data;
+package com.nickgismokato.TeXnik.backend.Data.Enum;
 
 public enum CategoryEnum{
 	Sound,
