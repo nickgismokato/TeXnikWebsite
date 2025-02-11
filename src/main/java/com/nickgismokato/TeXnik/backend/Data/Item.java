@@ -20,4 +20,23 @@ public class Item{
 		amount = total;
 		status = CategoryEnum.fromInteger(cID);
 	}
+
+	public int getSatyrID(){
+		return this.satyrID;
+	}
+	public int getCatID(){
+		return this.catID;
+	}
+	public int getEAN(){
+		return this.EAN;
+	}
+	public String getName(){
+		return this.name;
+	}
+	public int getAmount(){
+		return this.amount;
+	}
+	public CategoryEnum getStatus(){
+		return this.status;
+	}
 }

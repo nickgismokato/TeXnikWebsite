@@ -5,36 +5,18 @@ import com.vaadin.flow.component.*;
 
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
-import com.vaadin.flow.component.confirmdialog.ConfirmDialog;
 
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.*;
 
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.button.ButtonVariant;
-
-
-import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.Scroller;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
-import com.vaadin.flow.component.tabs.Tab;
-import com.vaadin.flow.component.tabs.TabsVariant;
-import com.vaadin.flow.component.tabs.Tabs;
-
-
-import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.router.RouterLink;
-
-
-import com.nickgismokato.TeXnik.Service.*;
-import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
-import java.util.Optional;
+import com.nickgismokato.TeXnik.Service.*;
+import com.nickgismokato.TeXnik.backend.Data.ItemHandler;
 
 
 /**
@@ -52,7 +34,6 @@ import java.util.Optional;
 @Route("/main")
 @CssImport(value = "./styles/navbarStyles.css", themeFor = "vaadin-app-layout")
 public class MainView extends AppLayout{
-
 
     public MainView(GreetService service) {
 		DrawerToggle toggle = new DrawerToggle();
@@ -73,7 +54,7 @@ public class MainView extends AppLayout{
 
 	private HorizontalLayout getNavigation(){
 		HorizontalLayout navigation = new HorizontalLayout();
-		Image satyrLogo = new Image("images/satyr.png", "Satyr logo");
+		Image satyrLogo = new Image("images/Satyr.png", "Satyr logo");
 
 		H1 title = new H1("TeXnik Website");
 		title.getStyle().set("font-size", "var(--lumo-font-size-xl)")
