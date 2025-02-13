@@ -3,7 +3,6 @@ package com.nickgismokato.TeXnik.backend.Data;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.validator.internal.util.logging.Log_.logger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
