@@ -4,6 +4,7 @@ import com.nickgismokato.TeXnik.ui.MainView;
 import com.nickgismokato.TeXnik.backend.Data.Item;
 import com.nickgismokato.TeXnik.backend.Data.ItemHandler;
 
+import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.Html;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.grid.Grid;

@@ -26,6 +26,9 @@ public class Application implements AppShellConfigurator {
     @Override
     public void configurePage(AppShellSettings settings){
 		settings.addMetaTag("author", "Nickgismokato");
-        settings.addFavIcon("icon", "icons/favicon.ico", "128x128");
+        
+        settings.setPageTitle("TeXnik WebApplication");
+        settings.addFavIcon("icon", "icons/Satyr_256-8.png", "192x192");
+        settings.addLink("shortcut icon", "icons/favicon.ico");
     }
 }
