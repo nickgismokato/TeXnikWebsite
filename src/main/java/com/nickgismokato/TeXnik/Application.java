@@ -6,6 +6,9 @@ import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
  * The entry point of the Spring Boot application.
@@ -14,7 +17,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * and some desktop browsers.
  *
  */
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
+//@SpringBootApplication
+@Configuration
+@EnableJpaRepositories(basePackages = "com.nickgismokato.TeXnik.backend.Data.Repo.ItemRepository")
 @PWA(name = "TeXnik Webapplication for itemizer", shortName = "TeXnik Website")
 @Theme(value = "my-theme", variant = "dark")
 public class Application implements AppShellConfigurator {

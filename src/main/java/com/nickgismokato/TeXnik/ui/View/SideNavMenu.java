@@ -19,6 +19,7 @@ public class SideNavMenu extends VerticalLayout{
 					new SideNavItem("Wishlist", "Wishlist", VaadinIcon.GIFT.create())
 			);
 			SideNav sideNavBottom = new SideNav();
+			sideNavBottom.setHeight("1280");
 			sideNavBottom.addItem(
 				new SideNavItem("About", "About", VaadinIcon.QUESTION_CIRCLE_O.create())
 			);

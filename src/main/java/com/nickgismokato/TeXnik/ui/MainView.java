@@ -56,7 +56,7 @@ public class MainView extends AppLayout{
 		HorizontalLayout navigation = new HorizontalLayout();
 		Image satyrLogo = new Image("images/Satyr.png", "Satyr logo");
 
-		H1 title = new H1("TeXnik Website");
+		H1 title = new H1("TeXnik Website - UNDER DEVELOPMENT");
 		title.getStyle().set("font-size", "var(--lumo-font-size-xl)")
 				.set("margin", "0");
 		satyrLogo.setWidth(80, Unit.PIXELS);

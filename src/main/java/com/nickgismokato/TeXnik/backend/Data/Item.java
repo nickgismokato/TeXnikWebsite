@@ -1,26 +1,44 @@
 package com.nickgismokato.TeXnik.backend.Data;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import com.nickgismokato.TeXnik.backend.Data.Enum.CategoryEnum;
 
-public class Item{
-	public int internalID;
-	public int satyrID;
-	public int catID;
-	public int EAN;
-	public String name;
-	public int amount;
-	public CategoryEnum status;
+@Entity
+@Table(name = "Item")
+public class Item {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "item_id")
+	private Long id;
+	private int satyrID;
+	private int catID;
+	private int EAN;
+	private String name;
+	private int amount;
+	private CategoryEnum status;
 
-	public Item(int iID, int sID, int cID, int ean, String nam, int total){
-		internalID = iID;
-		satyrID = sID;
-		catID = cID;
-		EAN = ean;
-		name = nam;
-		amount = total;
-		status = CategoryEnum.fromInteger(cID);
+	public Item(){
+		
+	}
+	public Item(int sID, int cID, int ean, String nam, int total){
+		this.satyrID = sID;
+		this.catID = cID;
+		this.EAN = ean;
+		this.name = nam;
+		this.amount = total;
+		this.status = CategoryEnum.fromInteger(cID);
 	}
 
+
+	public Long getID(){
+		return this.id;
+	}
 	public int getSatyrID(){
 		return this.satyrID;
 	}
@@ -40,3 +58,4 @@ public class Item{
 		return this.status;
 	}
 }
+
