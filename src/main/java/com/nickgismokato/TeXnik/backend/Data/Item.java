@@ -36,7 +36,7 @@ public class Item {
 	}
 
 
-	public Long getID(){
+	public Long getId(){
 		return this.id;
 	}
 	public int getSatyrID(){
