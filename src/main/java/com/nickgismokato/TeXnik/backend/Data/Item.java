@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 import com.nickgismokato.TeXnik.backend.Data.Enum.CategoryEnum;
 
 @Entity
-@Table(name = "Item")
+@Table(name = "Items")
 public class Item {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

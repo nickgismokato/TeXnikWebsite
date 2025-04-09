@@ -1,0 +1,34 @@
+version: '3'
+services:
+  database:
+    image: docker.io/postgres:latest
+    container_name: postgresDB
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: texnik
+      POSTGRES_PASSWORD: PASSWORD
+      POSTGRES_DB: texnikDb
+      PGDATA: /tmp
+    volumes:
+        - ./db-data/:/var/lib/postgresql/data/
+    networks:
+      - postgres-network
+  pgadmin:
+    image: docker.io/dpage/pgadmin4
+    user: root
+    ports:
+      - 15433:80
+        #env_file:
+        #- .env
+    depends_on:
+      - database
+    env_file:
+      - .env
+    networks:
+      - postgres-network
+    volumes:
+      ./pgadmin-data/:/var/lib/pgadmin/
+networks:
+  postgres-network:
+    driver: bridge
