@@ -34,9 +34,9 @@ public class ItemController {
 	public List<Item> GetAllItems() {
 		return itemRepository.findAll();
 	}
-	@PostMapping("/items")
+	/*@PostMapping("/items")
 	public Item CreateItem(@Valid @RequestBody Item item) {
 		return ItemRepository.save(item);
-	}
+	}*/
 
 }
