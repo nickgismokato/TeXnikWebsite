@@ -57,5 +57,21 @@ public class Item {
 	public CategoryEnum getStatus(){
 		return this.status;
 	}
+
+	public void setName(String name){
+		this.name = name;
+	}
+	public void setSatyrID(int satyrID){
+		this.satyrID = satyrID;
+	}
+	public void setCatID(int catID){
+		this.catID = catID;
+	}
+	public void setEAN(int ean){
+		this.EAN = ean;
+	}
+	public void setAmount(int amount){
+		this.amount = amount;
+	}
 }
 

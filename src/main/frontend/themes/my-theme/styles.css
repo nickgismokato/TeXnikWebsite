@@ -42,3 +42,14 @@ H1 {display: inline;}
     --lumo-shade: hsl(220, 15%, 25%);
 }
 
+#donut-chart .apexcharts-datalabel-label {
+    color: #FFFFFF !important; /* Set text color to white */
+    font-weight: bold !important; /* Make text bold */
+    font-size: 16px !important; /* Adjust font size */
+}
+
+#donut-chart .apexcharts-datalabel-value {
+    color: #FFFFFF !important; /* Set total amount color to white */
+    font-weight: bold !important; /* Make total amount bold */
+    font-size: 16px !important; /* Adjust font size */
+}
