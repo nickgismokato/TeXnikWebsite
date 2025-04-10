@@ -20,11 +20,11 @@ import java.util.stream.Collectors;
 @Route(value = "Dashboard", layout = MainView.class)
 @PageTitle("Dashboard View")
 @RouteAlias(value = "", layout = MainView.class)
-public class DashboardView extends VerticalLayout {
+public class DashboardView extends VerticalLayout{
     private final ItemRepository itemRepository;
 
     @Autowired
-    public DashboardView(ItemRepository itemRepository) {
+    public DashboardView(ItemRepository itemRepository){
         this.itemRepository = itemRepository;
 
         // Page title
@@ -36,7 +36,7 @@ public class DashboardView extends VerticalLayout {
         add(donutChart);
     }
 
-    private Div createDonutChart() {
+    private Div createDonutChart(){
 		// Fetch all items
 		List<Item> items = itemRepository.findAll();
 	

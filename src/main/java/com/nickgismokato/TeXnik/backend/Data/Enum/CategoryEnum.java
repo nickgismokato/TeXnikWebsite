@@ -8,7 +8,7 @@ public enum CategoryEnum{
 	Extra;
 
 	public static CategoryEnum fromInteger(int x){
-		switch (x) {
+		switch (x){
 			case 0:
 				return Sound;
 			case 1:

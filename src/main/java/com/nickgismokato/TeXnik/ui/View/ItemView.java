@@ -23,7 +23,7 @@ import java.util.List;
 
 @Route(value = "Item", layout = MainView.class)
 @PageTitle("Item")
-public class ItemView extends VerticalLayout {
+public class ItemView extends VerticalLayout{
     private final ItemRepository repo;
     private final Grid<Item> itemGrid;
     private final TextField nameField;
@@ -32,7 +32,7 @@ public class ItemView extends VerticalLayout {
     private final TextField satyrIdField;
     private final Select<CategoryEnum> categorySelect;
 
-    public ItemView(ItemRepository repo) {
+    public ItemView(ItemRepository repo){
         this.repo = repo;
         this.itemGrid = new Grid<>(Item.class);
 
@@ -66,7 +66,7 @@ public class ItemView extends VerticalLayout {
         add(deleteButton);
     }
 
-	private void configureGrid() {
+	private void configureGrid(){
 		// Disable automatic column generation
 		itemGrid.setColumns();
 	
@@ -170,15 +170,15 @@ public class ItemView extends VerticalLayout {
 		itemGrid.setItems(repo.findAll());
 	}
 
-    private void addItem() {
-        try {
+    private void addItem(){
+        try{
             String name = nameField.getValue();
             long ean = parseEAN(eanField.getValue(), -1);
             int satyrId = parseOrDefault(satyrIdField.getValue(), -1);
             int amount = Integer.parseInt(amountField.getValue());
             CategoryEnum category = categorySelect.getValue();
 
-            if (category == null) {
+            if(category == null){
                 add(new Label("Please select a category."));
                 return;
             }
@@ -188,16 +188,16 @@ public class ItemView extends VerticalLayout {
 
             itemGrid.setItems(repo.findAll());
             clearForm();
-        } catch (NumberFormatException ex) {
+        }catch(NumberFormatException ex) {
             add(new Label("Invalid input. Please check your values."));
         }
     }
 
-	private void updateItemInDatabase(Item item) {
-		try {
+	private void updateItemInDatabase(Item item){
+		try{
 			// Use the injected ItemRepository to update the item
 			repo.save(item);
-		} catch (Exception e) {
+		}catch(Exception e) {
 			e.printStackTrace();
 			add(new Label("Failed to update item: " + e.getMessage()));
 		}
@@ -211,28 +211,28 @@ public class ItemView extends VerticalLayout {
         }
     }
 
-    private long parseEAN(String value, long defaultValue) {
-        try {
+    private long parseEAN(String value, long defaultValue){
+        try{
             long parsedValue = Long.parseLong(value);
-            if (parsedValue >= 0 && parsedValue <= 9999999999999L) {
+            if(parsedValue >= 0 && parsedValue <= 9999999999999L) {
                 return parsedValue;
-            } else {
+            }else{
                 return defaultValue;
             }
-        } catch (NumberFormatException e) {
+        }catch(NumberFormatException e){
             return defaultValue;
         }
     }
 
-    private void deleteSelectedItem() {
+    private void deleteSelectedItem(){
         Item selected = itemGrid.asSingleSelect().getValue();
-        if (selected != null) {
+        if(selected != null){
             repo.delete(selected);
             itemGrid.setItems(repo.findAll());
         }
     }
 
-    private void clearForm() {
+    private void clearForm(){
         nameField.clear();
         eanField.clear();
         amountField.clear();

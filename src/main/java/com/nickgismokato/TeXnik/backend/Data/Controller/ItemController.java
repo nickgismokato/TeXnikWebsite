@@ -20,19 +20,19 @@ import com.nickgismokato.TeXnik.backend.Data.Repo.ItemRepository;
 
 @RestController
 @RequestMapping("/api/v1")
-public class ItemController {
+public class ItemController{
     @Autowired
     private ItemRepository itemRepository;
 
     // Get all items
     @GetMapping("/items")
-    public List<Item> getAllItems() {
+    public List<Item> getAllItems(){
         return itemRepository.findAll();
     }
 
     // Get a single item by ID
     @GetMapping("/items/{id}")
-    public ResponseEntity<Item> getItemById(@PathVariable Long id) {
+    public ResponseEntity<Item> getItemById(@PathVariable Long id){
         Item item = itemRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Item not found with id: " + id));
         return ResponseEntity.ok(item);
@@ -40,13 +40,13 @@ public class ItemController {
 
     // Create a new item
     @PostMapping("/items")
-    public Item createItem(@Valid @RequestBody Item item) {
+    public Item createItem(@Valid @RequestBody Item item){
         return itemRepository.save(item);
     }
 
     // Update an existing item
     @PutMapping("/items/{id}")
-    public ResponseEntity<Item> updateItem(@PathVariable Long id, @Valid @RequestBody Item itemDetails) {
+    public ResponseEntity<Item> updateItem(@PathVariable Long id, @Valid @RequestBody Item itemDetails){
         Item item = itemRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Item not found with id: " + id));
 
@@ -63,7 +63,7 @@ public class ItemController {
 
     // Delete an item
     @DeleteMapping("/items/{id}")
-    public ResponseEntity<Void> deleteItem(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteItem(@PathVariable Long id){
         Item item = itemRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Item not found with id: " + id));
 
