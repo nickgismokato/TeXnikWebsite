@@ -54,7 +54,7 @@ Remove the flag `-Pproduction` if you wish to build the developer build.
 To run this webapplication, a `PostgreSQL` server has to be active and reachable for the server. Currently we assume such a server is available at `127.0.0.1:5432` which is a `localhost` address. These settings can be changed inside the `src/main/resources/application.properties` file. 
 
 **Furthermore** a file `/srv/texnikwebsiteproperties/env.properties` should be created. Inside here we expect the property variable `DB_PASSWORD` to be declared. The style of the `env.properties` should be as the following:
-```properties
-DB_PASSWORD=ExampleOfAPassword123
-```
-<figcaption><code>env.properties</code></figcaption>
+> ```properties
+> DB_PASSWORD=ExampleOfAPassword123
+> ```
+> `env.properties`
