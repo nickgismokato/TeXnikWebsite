@@ -12,6 +12,10 @@ The second case of our web application is that of containing self-made documenta
 
 To see a full list of **Features** and **Planned Features**, you can read it [here](src/FeatureList.md).
 
+## Changelog
+
 A **changelog** can be seen [here](src/changelog.md). 
 
-## 
+### Version 1.0
+
+**DONE**
