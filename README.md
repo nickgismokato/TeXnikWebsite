@@ -22,21 +22,22 @@ The following list both works as an information of what functionality we want to
 ### Main functionality of the website
 - [ ] Admin/User login
   - [ ] Anomynous user for non $\TeX \texttt{nik}$ end-users
-- [ ] Display items in an ordered fashion
-  - [ ] Catagorize item in main catagories: `Sound::0`, `Lighting::1`, `AV::2`, `Power::3`, `Extra::4`
-  - [ ] Items have the following fields: `InternalID`, `SatyrID`, `CatID`, `EAN`, `Name`, `TotalAmount`, `Status`
-- [ ] Display the storage and its content in an ordered fashion
+- [x] Display items in an ordered fashion
+  - [x] Catagorize item in main catagories: `Sound::0`, `Lighting::1`, `AV::2`, `Power::3`, `Extra::4`
+  - [x] Items have the following fields: `InternalID`, `SatyrID`, `CatID`, `EAN`, `Name`, `TotalAmount`, `Status`
+- [x] Display the storage and its content in an ordered fashion
   - [ ] Have a relantioship between items and their storage ID within our storage room 
 - [ ] Both PC and mobile friendly
 - [ ] Read QR-code or Barcodes with webcam/built-in camera
 - [ ] Add, remove or update catagories, items and storage (**ADMIN**)
-- [ ] Internal database structure and file handling so no need for external database
+  - [x] **Debug** added for all non-user. (*WILL BE REMOVED*)
+- [x] Internal database structure and file handling so no need for external database
 - [ ] Code documentation for the full website
 ### Secondary functionality of the website
-- [ ] Use graphs to show current inventory stock
+- [x] Use graphs to show current inventory stock
 - [ ] Store software/documentation of processes on the website in either `.zip` or `.pdf` format
 - [ ] Have an API for end-users to call to get the data of the items.
-- [ ] 
+  - [x] Have a PostgreSQL server port to handle data requests. 
 ## How to run
 There are two options to run this application:
 ### 1) Manual installation `Java` run
@@ -48,3 +49,12 @@ Depending on your version, you will have to insert that yourself. Also make sure
 To run with `Spring-Boot` just navigate to the top most directory where the `pom.xml` is. From there run the following command: 
 `mvn spring-boot:run -Pproduction`
 Remove the flag `-Pproduction` if you wish to build the developer build.
+
+## Dependencies
+To run this webapplication, a `PostgreSQL` server has to be active and reachable for the server. Currently we assume such a server is available at `127.0.0.1:5432` which is a `localhost` address. These settings can be changed inside the `src/main/resources/application.properties` file. 
+
+**Furthermore** a file `/srv/texnikwebsiteproperties/env.properties` should be created. Inside here we expect the property variable `DB_PASSWORD` to be declared. The style of the `env.properties` should be as the following:
+```properties
+DB_PASSWORD=ExampleOfAPassword123
+```
+<figcaption><code>env.properties</code></figcaption>
