@@ -21,7 +21,7 @@ public final class ItemHandler{
 		logger.info("ItemHandler created.");
 	}
 
-	public static void AddToList(int sID, int cID, int ean, String name, int total){
+	public static void AddToList(int sID, int cID, Long ean, String name, int total){
 		logger.info("Adding item to list.");
 		items.add(new Item(sID, cID, ean, name, total));
 		logger.info("Item added to list.");

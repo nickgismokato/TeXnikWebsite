@@ -18,7 +18,7 @@ public class Item {
 	private Long id;
 	private int satyrID;
 	private int catID;
-	private int EAN;
+	private Long EAN;
 	private String name;
 	private int amount;
 	private CategoryEnum status;
@@ -26,7 +26,7 @@ public class Item {
 	public Item(){
 		
 	}
-	public Item(int sID, int cID, int ean, String nam, int total){
+	public Item(int sID, int cID, Long ean, String nam, int total){
 		this.satyrID = sID;
 		this.catID = cID;
 		this.EAN = ean;
@@ -45,7 +45,7 @@ public class Item {
 	public int getCatID(){
 		return this.catID;
 	}
-	public int getEAN(){
+	public Long getEAN(){
 		return this.EAN;
 	}
 	public String getName(){
@@ -67,7 +67,7 @@ public class Item {
 	public void setCatID(int catID){
 		this.catID = catID;
 	}
-	public void setEAN(int ean){
+	public void setEAN(Long ean){
 		this.EAN = ean;
 	}
 	public void setAmount(int amount){

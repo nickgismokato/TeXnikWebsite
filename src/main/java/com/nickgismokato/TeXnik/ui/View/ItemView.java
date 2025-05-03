@@ -9,7 +9,8 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.editor.Editor;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.Label;
+//import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.NativeLabel;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
@@ -37,8 +38,8 @@ public class ItemView extends VerticalLayout{
         this.itemGrid = new Grid<>(Item.class);
 
         // Page title and description
-        add(new Label("Item Management"));
-        add(new Div(new Label("Add, view, and delete items.")));
+        add(new NativeLabel("Item Management"));
+        add(new Div(new NativeLabel("Add, view, and delete items.")));
 
         // Form for adding items
         nameField = new TextField("Name");
@@ -112,7 +113,7 @@ public class ItemView extends VerticalLayout{
 		itemGrid.getColumnByKey("satyrIdColumn").setEditorComponent(satyrIdEditor);
 	
 		TextField eanEditor = new TextField();
-		binder.bind(eanEditor, item -> String.valueOf(item.getEAN()), (item, value) -> item.setEAN(Integer.parseInt(value)));
+		binder.bind(eanEditor, item -> String.valueOf(item.getEAN()), (item, value) -> item.setEAN(Long.parseLong(value)));
 		itemGrid.getColumnByKey("eanColumn").setEditorComponent(eanEditor);
 	
 		TextField amountEditor = new TextField();
@@ -179,17 +180,17 @@ public class ItemView extends VerticalLayout{
             CategoryEnum category = categorySelect.getValue();
 
             if(category == null){
-                add(new Label("Please select a category."));
+                add(new NativeLabel("Please select a category."));
                 return;
             }
 
-            Item newItem = new Item(satyrId, category.ordinal(), (int) ean, name, amount);
+            Item newItem = new Item(satyrId, category.ordinal(), (Long) ean, name, amount);
             repo.save(newItem);
 
             itemGrid.setItems(repo.findAll());
             clearForm();
         }catch(NumberFormatException ex) {
-            add(new Label("Invalid input. Please check your values."));
+            add(new NativeLabel("Invalid input. Please check your values."));
         }
     }
 
@@ -199,7 +200,7 @@ public class ItemView extends VerticalLayout{
 			repo.save(item);
 		}catch(Exception e) {
 			e.printStackTrace();
-			add(new Label("Failed to update item: " + e.getMessage()));
+			add(new NativeLabel("Failed to update item: " + e.getMessage()));
 		}
 	}
 
@@ -214,7 +215,7 @@ public class ItemView extends VerticalLayout{
     private long parseEAN(String value, long defaultValue){
         try{
             long parsedValue = Long.parseLong(value);
-            if(parsedValue >= 0 && parsedValue <= 9999999999999L) {
+            if(parsedValue >= 0 && parsedValue <= 9999999999999999L) {
                 return parsedValue;
             }else{
                 return defaultValue;
