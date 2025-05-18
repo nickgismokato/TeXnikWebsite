@@ -30,10 +30,10 @@ public class AboutView extends Div{
 	
 		
 
-		Span devName = new Span("Name: Nick Alexander Villum Laursen");
-		Html githubName = new Html("<p>Github link: <a href=\"https://github.com/nickgismokato\" target=\"_blank\"> Github</a></p>");
+		Html devName = new Html("<p><b>Name:</b> Nick Alexander Villum Laursen</p>");
+		Html githubName = new Html("<p><b>Github link:</bZ <a href=\"https://github.com/nickgismokato\" target=\"_blank\"> Github</a></p>");
 		//githubName.setTarget("_blank");
-		Span devMail = new Span("Email: nickvillumlaursen@gmail.com");
+		Html devMail = new Html("<p><b>Email:</b> nickvillumlaursen@gmail.com</p>");
 		VerticalLayout developerInformation = new VerticalLayout(devName, githubName, devMail);
 		developerInformation.setSpacing(false);
 		developerInformation.setPadding(false);
@@ -44,10 +44,10 @@ public class AboutView extends Div{
 		devDetails.addThemeVariants(DetailsVariant.FILLED);
 
 
-		Span webpageInformation = new Span("Webpage Titel: TeXnik");
-		Span webpageLicence = new Span("Webpage Licence: MIT");
-		Span webpageDescription = new Span("Webpage Description: TeXnik is a web application for managing and tracking items for our storage. It provides an easy-to-use interface for adding, viewing, and deleting items, as well as generating reports and charts to visualize data. Furthermore the Site contains a user system for managing the people having access to the site and the backend. The development progress can be found on GitHub and also the source code.");
-		Html webpageGithubLink = new Html("<p>Webpage GitHub link: <a href=\"https://github.com/nickgismokato/TeXnikWebsite/tree/main\" target=\"_blank\"> Github</a></p>");
+		Html webpageInformation = new Html("<p><b>Webpage Titel:</b> TeXnik</p>");
+		Html webpageLicence = new Html("<p><b>Webpage Licence:</b> MIT</p>");
+		Html webpageDescription = new Html("<p><b>Webpage Description:</b> TeXnik is a web application for managing and tracking items for our storage. It provides an easy-to-use interface for adding, viewing, and deleting items, as well as generating reports and charts to visualize data. Furthermore the Site contains a user system for managing the people having access to the site and the backend. The development progress can be found on GitHub and also the source code.</p>");
+		Html webpageGithubLink = new Html("<p><b>Webpage GitHub link:</b> <a href=\"https://github.com/nickgismokato/TeXnikWebsite/tree/main\" target=\"_blank\"> Github</a></p>");
 		VerticalLayout webpageInformationLayout = new VerticalLayout(webpageInformation, webpageLicence, webpageDescription, webpageGithubLink);
 		webpageInformationLayout.setSpacing(false);
 		webpageInformationLayout.setPadding(false);

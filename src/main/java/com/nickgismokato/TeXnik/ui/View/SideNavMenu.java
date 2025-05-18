@@ -10,7 +10,9 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class SideNavMenu extends VerticalLayout{
 		public SideNavMenu(){
-
+			setSizeFull();
+			setPadding(false);
+			setSpacing(false);
 			SideNav sideNavMain = new SideNav();
 			sideNavMain.addItem(
 					new SideNavItem("Dashboard", "Dashboard",VaadinIcon.DASHBOARD.create()),
@@ -24,5 +26,6 @@ public class SideNavMenu extends VerticalLayout{
 				new SideNavItem("About", "About", VaadinIcon.QUESTION_CIRCLE_O.create())
 			);
 			add(sideNavMain, sideNavBottom);
+			expand(sideNavMain);
 		}
 }

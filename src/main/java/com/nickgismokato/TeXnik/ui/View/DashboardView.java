@@ -6,6 +6,7 @@ import com.nickgismokato.TeXnik.backend.Data.Enum.CategoryEnum;
 import com.nickgismokato.TeXnik.backend.Data.Repo.ItemRepository;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
@@ -27,13 +28,14 @@ public class DashboardView extends VerticalLayout{
     public DashboardView(ItemRepository itemRepository){
         this.itemRepository = itemRepository;
 
+		// Center layout.
+		setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.CENTER);
+
         // Page title
         add(new Text("Dashboard"));
 
         // Donut chart
-        Div donutChart = createDonutChart();
-
-        add(donutChart);
+        add(createDonutChart());
     }
 
     private Div createDonutChart(){
